@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Comment fonctionne un site web?</title>
+    </head>
+    <body>
+        <center>
+        <div class="contenu">
+            
+            <h1>Les réponses au quiz!</h2>
+            <h3>Q1 · Que sont les métadonnées d'une page ?</h3>
+            <p>
+                Les données contenues dans la page<br>
+                <b class="correct">Les données à propos de la page</b> √<br>
+                Les données à propos du serveur<br>
+                Les données sur l'apparence du site<br>
+            </p>
+            <h3>Q2 · Sous quelle forme se présente un balise HTML ?</h3>
+            <p>
+                <code>&lt;balise clé:valeur;>Contenu&lt;balise></code><br>
+                <code>&lt;balise attribut="valeur">Contenu&lt;balise></code><br>
+                <code>&lt;balise propriété="valeur">Contenu&lt;/balise></code><br>
+                <code class="correct"><b class="correct">&lt;balise attribut="valeur">Contenu&lt;/balise></b></code> √<br>
+            </p>
+            <h3>Q3 · Quelle balise est utilisée pour insérer du CSS dans une page ?</h3>
+            <p>
+                <code class="correct"><b class="correct">&lt;style></b> √</code><br>
+                <code>&lt;img></code><br>
+                <code>&lt;css></code><br>
+                <code>&lt;body></code><br>
+            </p>
+            <h3>Q4 · Comment fonctionne la relation client-serveur ?</h3>
+            <p>
+                Le client envoie des commandes au serveur, qui renvoie des recettes.<br>
+                Le serveur envoie les pages au client, et le client sélectionne la page qu'il souhaite<br>
+                <b class="correct">Le client envoie une requête au serveur, le serveur revoie ensuite une réponse. √</b><br>
+                Le serveur envoie des requêtes au client qui confirme ensuite par une réponse.<br>
+            </p>
+
+            <button class="button"><a href="index.html">Retour à la page d'accueil</a></button>
+        </div>
+        </center>
+
+        <script>
+            function check() {
+                let url = window.location.search;
+                if (url == "?q1=r2&q2=r4&q3=r1&q4=r3") {
+                    alert("Félicitations, vous avez eu toutes les bonnes réponses !!! :D")
+                }else{
+                    alert("Vérifiez vos réponses! Une ou plusieurs erreurs :(")
+                }
+            }
+            window.addEventListener('load', function () {
+                check();
+            });
+        </script>
+    </body>   
+</html>

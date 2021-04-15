@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Comment fonctionne un site web?</title>
+    </head>
+    <body>
+        <center>
+        <div class="contenu">
+            <h1 class="titre">Comment fonctionne un site web?</h1>
+            <p>Tout le monde connait le Web. Mais saviez vous comment, dans les coulisses, fonctionnent les sites ?</p>
+            <img src="cactus_confused.png" width=70%>
+            <h2>Le HTML: Le squelette du site</h2>
+            <p>
+                Tout d'abord, le langage qu'utilisent les sites afin d'afficher leur contenu est le <b>HTML</b>. C'est un <b>langage de 
+                balisage</b> permettant de structurer les pages, d'inclure du contenu média, tel que des vidéos et des images, et d'insérer
+                ce qu'on appelle de <b>l'hypertexte.</b> 
+            </p>
+            <p>Voici un exemple: </p>
+
+            <pre class="code">&lt;!DOCTPYE html>
+&lt;html>
+    &lt;head>
+        &lt;title>Les cactus c'est trop mignon!&lt;/title> 
+    &lt;/head>
+    &lt;body>
+        &lt;h1>Bienvenue sur le site des fans de cactus !&lt;/h1>
+        &lt;a href="https://fr.wikipedia.org/wiki/Cactaceae">
+            Article Wikipédia sur les cactus
+        &lt;/a>
+        &lt;p>
+            Les cactus sont &lt;i>trop bien&lt;/i>, on peut leur faire des &lt;b>câlins!&lt;/b>
+        &lt;/p> 
+        &ltimg src="cactus.jpg">
+    &lt;/body>
+&lt;/html></pre>
+
+            <p>Ceci nous donnera:</p>
+            <img src="tab_bar.png" width=80%>
+            <div class="rendu">
+                <h1>Bienvenue sur le site des fans de cactus !</h1>
+                <a href="https://fr.wikipedia.org/wiki/Cactaceae">Article Wikipédia sur les cactus</a>
+                <p>
+                    Les cactus sont <i>trop bien</i>, on peut leur faire des <b>câlins!</b>
+                </p>
+                <img src="cactus.jpg">
+            </div>
+
+            <p>
+                HTML fonctionne par un système de <b>balises</b>. Elles se présentent sous la forme
+                <code>&lt;balise attribut="valeur">Contenu&lt;/balise></code>.
+            </p>
+            <p>
+                Dans cet exemple, <code>&lt;!DOCTYPE html></code> nous permet d'indiquer que la page web utilisera 
+                la dernière version de HTML.
+            </p>
+            <p>
+                Ensuite, tout le contenu de notre site sera contenu entre les balises <code>&lt;html></code>, 
+                obligatoirement.
+            </p>
+            <p>
+                Le <code>&lt;head></code> contient ce qu'on appelle les <b>méta-données</b>: les informations à 
+                propos du site, tel que son titre, son <a href="https://fr.wikipedia.org/wiki/Codage_des_caract%C3%A8res">
+                encodage</a>, etc.
+            </p>
+            <p>
+                Le <code>&lt;body></code> est là où se trouve la majorité du contenu de la page: le texte, les liens, les
+                images, etc. Par exemple:
+            </p>
+            <p>
+                Un <code>&lt;h1></code> indique un grand titre, et <code>&lt;h2></code> un titre un peu moins grand,
+                <code>&lt;h3></code>, encore moins grand, ainsi de suite jusqu'à <code>&lt;h6></code>.
+            </p>
+
+<pre class="code">
+&lt;body>
+    &lt;h1>Titre très important!!!&lt;/h1>
+    &lt;h2>Titre important&lt;/h2>
+    &lt;h3>Titre un peu moins important&lt;/h3>
+    &lt;h4>Titre pas très important&lt;/h4>
+    &lt;h5>Titre peu important&lt;/h5>
+    &lt;h6>Titre inutile&lt;/h6>
+&lt;/body></pre>
+
+            <div class="rendu">
+                <h1>Titre très important!!!</h1>
+                <h2>Titre important</h2>
+                <h3>Titre un peu moins important</h3>
+                <h4>Titre pas très important</h4>
+                <h5>Titre peu important</h5>
+                <h6>Titre inutile</h6>
+            </div>
+
+            <p>
+                La balise <code>&lt;a></code> indique un <b>hyperlien</b>: c'est tout simplement un lien permettant 
+                d'aller vers une autre page du site, ou des sites externes, 
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">comme ceci</a>.
+            </p>
+            <p>
+                <code>href="https://fr.wikipedia.org/wiki/Cactaceae"</code> est un <b>attribut</b>: c'est une propriété de 
+                la balise. Ici, <code>href</code> indique le chemin qui amène vers le fichier du site ou d'un lien externe.
+                Mais il existe des centaines d'autres attributs, tel que <code>height</code>, pour définir la hauteur d'une 
+                image ou d'une balise.
+            </p>
+            <p>
+                Une balise <code>&lt;img></code> indique l'emplacement d'une <b>image</b>. Elle est dite <b>autofermante</b>:
+                on n'a pas besoin de la refermer avec une balise fermante (<code>&lt;/img></code> n'existe pas). 
+            </p>
+
+            <h2>Un coup de peinture: le CSS!</h2>
+            <img src="cactus_paint.png" height=400px>
+            <p>
+                Le <b>CSS</b>, pour Cascading Style Sheets, est un langage décrivant la présentation d'une page Internet. Il nous
+                permet par exemple de changer la police d'écriture, les couleurs d'arrière-plan, la taille de la police, etc.<br>
+                La balise <code>&lt;style></code> nous permet d'insérer du CSS dans notre site:
+            </p>
+
+<pre class="code">
+&lt;style>
+    body{
+        background-color: greenyellow;
+        font-family: Verdana;
+    }
+    img{
+        width:100px
+    }
+&lt;/style></pre>
+
+            <div class="rendu" style="background-color: greenyellow;  font-family: Verdana;">
+                <h1>Bienvenue sur le site des fans de cactus !</h1>
+                <a href="https://fr.wikipedia.org/wiki/Cactaceae">Article Wikipédia sur les cactus</a>
+                <p>
+                    Les cactus sont <i>trop bien</i>, on peut leur faire des <b>câlins!</b>
+                </p>
+                <img src="cactus.jpg" style="width:100px">
+            </div>
+
+            <p>
+                Dans cet exemple, on indique que on fera des modifications au <code>body</code> et à tous les éléments
+                <code>img</code>. Ensuite, toutes les modifications qu'on souhaite apporter seront contenues entre les
+                accolades <code>{}</code>. Ça indique <i>quelles balises</i> on souhaite modifier.
+            </p>
+            <p>
+                <code>background-color</code>, <code>font-family</code>, et <code>width</code> sont des <b>propriétés</b>,
+                associées à une ou des <b>valeurs</b>. Elles indiquent ce que l'on souhaite modifier, respectivement: la couleur de 
+                l'arrière-plan, la police d'écriture, et la largeur de l'image. Il existe des centaines d'autres propriétés, 
+                certaines permettent de changer le formatage du texte, de rajouter des ombres, des contours, et même de faire des
+                animations simples.
+            </p>
+            <h2>La relation entre le client et le serveur</h2>
+            <p>
+                Avant toute chose, nous devons définir ce qu'est le <b>Web</b> et <b>Internet</b>.<br>
+                Le <b>Web</b> est différent d'<b>Internet</b>. Le Web utilise les services d'Internet, 
+                à la manière d'un taxi (le Web) qui utilise le réseau routier d'une ville (Internet). Le Web comprend
+                des sites comme Google et Wikipédia. Internet, quant à lui, peut être par exemple utilisé par un servcie d'email. 
+            </p>
+            <p>
+                Quand vous accédez à un site, votre appareil, le <b>client</b>, par exemple un natigateur web,
+                envoie une <b>requête</b> vers un <b>serveur</b>, puis va attendre une <b>réponse</b> de sa part. 
+            </p>
+            <img src="cactus_send_request.png" width=90%>
+            <p>
+                Le serveur, quant à lui, attend constamment qu'on le sollicite, et dès qu'il reçoit une requête, va générer une 
+                <b>réponse</b>, qu'il revoie au client.  
+            </p>
+            <img src="cactus_response_got.png" width=90%>
+            <p>
+                Cette réponse peut inclure :
+                <ul style="text-align: left; font-size: 18px">
+                    <li>Les fichiers HTML et CSS d'un site</li>
+                    <li>Les images, vidéos, fichier audio, etc.</li>
+                    <li>Des <b>scripts</b>: des programmes permettant de créer des éléments interactifs et d'exécuter
+                    du code sur la page.</li>
+                </ul>
+            </p>
+            <p>
+                Les requêtes et les réponses sont transmises par un <b>protocole</b>: un ensemble de règles dictant comment
+                sont transmises les informations. Sur le Web, le protocole usilisé est <b>HTTP</b>: HyperText Transfer Protocol.
+                C'est ce qui apparait dans quasiment toutes les adresses de sites: par exemple, dans 
+                <code><u>https</u>://www.ecosia.com/</code> (Le "s" signifie "secure", la transmission est encryptée).
+            </p>
+
+            <h2>Quelques liens pour approfondir vos connaissances!</h2>
+            <img src="cactus_links.png" width=80%>
+            <ul style="text-align:left">
+                <li>
+                    <a href="https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML">
+                        Introduction au HTML - Mozilla Web Docs
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/css/">
+                        CSS Tutorial - w3schools (anglais)
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.sololearn.com/">
+                        Sololearn: Une application pour apprendre la programmation, et le HTML, CSS (Android, iOS, web)
+                    </a>
+                </li>
+            </ul>
+
+            <h1>Un petit quiz pour tester vos connaissances!</h2>
+            <form method="get" action="quiz_reponses.html">
+                <div class="box">
+                    <h3 class="question">Q1 · Que sont les métadonnées d'une page ?</h3>
+                    <input type="radio" name="q1" id="r1" value="r1">
+                    <label for="r1">Les données contenues dans la page</label><br>
+                    <input type="radio" name="q1" id="r2" value="r2">
+                    <label for="r2">Les données à propos de la page</label><br>
+                    <input type="radio" name="q1" id="r3" value="r3">
+                    <label for="r3">Les données à propos du serveur</label><br>
+                    <input type="radio" name="q1" id="r4" value="r4">
+                    <label for="r4">Les données sur l'apparence du site</label><br>
+                </div>
+                <div class="box">
+                    <h3 class="question">Q2 · Sous quelle forme se présente un balise HTML ?</h3>
+                    <input type="radio" name="q2" id="r1" value="r1">
+                    <label for="r1"><code>&lt;balise clé:valeur;>Contenu&lt;balise></code></label><br>
+                    <input type="radio" name="q2" id="r2" value="r2">
+                    <label for="r2"><code>&lt;balise attribut="valeur">Contenu&lt;balise></code></label><br>
+                    <input type="radio" name="q2" id="r3" value="r3">
+                    <label for="r3"><code>&lt;balise propriété="valeur">Contenu&lt;/balise></code></label><br>
+                    <input type="radio" name="q2" id="r4" value="r4">
+                    <label for="r4"><code>&lt;balise attribut="valeur">Contenu&lt;/balise></code></label><br>
+                </div>
+                <div class="box">
+                    <h3 class="question">Q3 · Quelle balise est utilisée pour insérer du CSS dans une page ?</h3>
+                    <label for="rep-select">Sélectionnez une réponse:</label>
+                    <select name="q3" id="rep-select">
+                        <option value="r1">&lt;style></option>
+                        <option value="r2">&lt;img></option>
+                        <option value="r3">&lt;css></option>
+                        <option value="r4">&lt;body></option>
+                    </select>
+                </div>
+                <div class="box">
+                    <h3 class="question">Q4 · Comment fonctionne la relation client-serveur ?</h3>
+                    <input type="radio" name="q4" id="r1" value="r1">
+                    <label for="r1">Le client envoie des commandes au serveur, qui renvoie des recettes.</label><br>
+                    <input type="radio" name="q4" id="r2" value="r2">
+                    <label for="r2">Le serveur envoie les pages au client, et le client sélectionne la page qu'il souhaite</label><br>
+                    <input type="radio" name="q4" id="r3" value="r3">
+                    <label for="r3">Le client envoie une requête au serveur, le serveur revoie ensuite une réponse.</label><br>
+                    <input type="radio" name="q4" id="r4" value="r4">
+                    <label for="r4">Le serveur envoie des requêtes au client qui confirme ensuite par une réponse.</label><br>
+                </div>
+                <br>
+                <button class="button">J'ai fini!</button>
+            </form>
+        </div>
+        </center>
+    </body>   
+</html>
